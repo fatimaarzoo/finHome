@@ -1,0 +1,25 @@
+{% extends 'rental/base.html'%}
+{%block content%}
+{% load crispy_forms_tags %}
+
+
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 bg-light px-5 py-5 shadow my-5">
+        <div class="container">
+    <h1>Chat with our bot!</h1>
+    <div class="chat_box">
+        {% if response %}
+            <div><strong>Bot:</strong> {{ response }}</div>
+        {% endif %}
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="user_input" class="chat-input" placeholder="Type your message..." required>
+        <button type="submit" class="send-btn">Send</button>
+    </form>
+</div>
+    <div class="col-sm-3"></div>
+</div>
+
+{%endblock%}

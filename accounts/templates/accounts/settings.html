@@ -1,0 +1,39 @@
+{% extends "rental/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+<div class="container-fluid bg-dark">
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 px-5 py-5 shadow my-5 box border text-white ">
+<h1>PROFILE PAGE</h1>
+<h2>Welcome {{user.username}}</h2>
+<h3> YO {{user.role}}</h3>
+
+         <img class="rounded-circle account-img" src="/images/{{user.profile.image.url}}/" >
+        <h1>This is the profile page for {{user.username}}</h1>
+        {{user.email}}
+    
+<hr>
+<form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ p_form |crispy }}
+        <button type="submit">Update</button>
+    </form>
+    <a href="/user_update/">USER UPDATE</a><br>
+    <!-- <a href="/profile/{{user.role}}/user_update/">USER UPDATE</a> -->
+     <!-- src="{{ user.profile.image.url }}" -->
+      <a href="/changepassword/">CHANGE PASSWORD</a>
+      <!-- put all these in settings -->
+       <!-- also u need a sidebar -->
+        <form>
+            {% csrf_token %}
+       <a class="btn btn-danger" type="submit" href="/{{user.id}}/delete/">DELETE</a>
+       </form>
+
+
+</div>
+ 
+<div class="col-sm-4"></div>
+</div>
+</div>
+{% endblock content %}

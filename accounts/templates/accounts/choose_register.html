@@ -1,0 +1,74 @@
+{% extends 'rental/base.html'%}
+{%block content%}
+{% load static %}
+{%load crispy_forms_tags %}
+
+<div class="container-fluid slider1 " style="background: linear-gradient(90deg, rgba(255, 95, 109, 1), rgba(255, 195, 113, 1));
+-webkit-background: linear-gradient(90deg, rgba(255, 95, 109, 1), rgba(255, 195, 113, 1));
+-moz-background: linear-gradient(90deg, rgba(255, 95, 109, 1), rgba(255, 195, 113, 1));">
+  <!-- for search -->
+   
+  <div class="row">
+    
+    <div class="col-md-8 mx-auto py-5 text-center">
+      <h1 style="color: #ffffff;"> SELECT REGISTER<br> __________</h1>
+    </div>
+  </div>
+  <!-- for cards -->
+  <div class="row justify-content-center mt-5 ">
+            
+                <div class="col-md-3 px-5 py-4 b1 ">
+                    <a href="/register/student/" class="card-link">
+                    <div class="cardX">
+                    <h3>REGISTER USER</h3>
+                    <b>_________</b><br><br>
+                    <i class="fa-solid fa-user"></i>
+                    <p style="color:rgb(66, 66, 66);text-align: justify;margin-top: 20px;">
+                        Find your quality stay for your educational term.
+                        For small text on a white background, consider using a slightly darker color than pure white,
+                        
+                    </p>
+
+                </div>
+                </a>
+                </div>
+                <div class="col-md-3 px-5 py-4 b1 ">
+                    <a href="/register/renter/" class="card-link">
+                    <div class="cardx">
+                    <h3>REGISTER RENTER</h3>
+                    <b>_________</b><br><br>
+                    <i class="fa-solid fa-building"></i>
+                    <p style="color:rgb(66, 66, 66);text-align: justify;margin-top: 20px;">
+                        Find your quality stay for your educational term.
+                        For small text on a white background, consider using a slightly darker color than pure white,
+                        
+                    </p>
+
+                </div>
+                </a>
+                </div>
+                <div class="col-md-3 px-5 py-4 b1 ">
+                    <a href="/register/seller/" class="card-link">
+                    <div class="cardx">
+                    <h3>REGISTER FOOD SELLER</h3>
+                    <b>_________</b><br><br>
+                    <i class="fa-solid fa-bowl-food"></i>
+                    <p style="color:rgb(66, 66, 66);text-align: justify;margin-top: 20px;">
+                        Find your quality stay for your educational term.
+                        For small text on a white background, consider using a slightly darker color than pure white,
+                        
+                    </p>
+
+                </div>
+                </a>
+                </div>
+            
+              
+        
+
+            </div>
+            </div>
+
+
+        
+{%endblock%}

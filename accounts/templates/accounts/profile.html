@@ -1,0 +1,51 @@
+{% extends "rental/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content%}
+<div class="container-fluid ">
+        <!-- <div class="row">
+
+                <div class="col-md-8  "> -->
+                        <div class="row justify-content-center ">
+                                <div class="col-md-6 profile-full px-5 py-5 shadow my-5 box border  text-center bg-light">
+                                        <h1>PROFILE PAGE<br>
+                                                _______</h1>
+                                        {%if user.role == 'student'%}
+                                        <img src="{{user.userprofile.image.url}}" style="max-height:150px;border-radius: 50%;" alt="{% static 'rental/usericon.png'}">
+                                        {% elif user.role == 'renter'%}
+                                         <img src="{{user.renterprofile.image.url}}" style="max-height:150px;border-radius: 50%;" alt="{% static 'rental/usericon.png'}">
+                                         {% elif user.role == 'seller'%}
+                                         <img src="{{user.sellerprofile.image.url}}" style="max-height:150px;border-radius: 50%;" alt="{% static 'rental/usericon.png'}">
+                                         {% endif %}
+                                         <h2>@{{user.username}}</h2>
+                                         <div class="bg-light mx-4 my-4 px-5 py-5 shadow text-dark">
+                                        <hr>
+                                        
+                                        USER INFORMATION
+                                        </div>
+                                        <div class="bg-light mx-4 my-4 px-5 py-5 shadow text-dark">
+                                        
+                                        
+                                        PROFILE_UPDATE FORM
+                                        <hr>
+                                        <form method="post" enctype="multipart/form-data">
+                                                {% csrf_token %}
+                                                {{ p_form |crispy }}
+                                        <button type="submit" class="btn btn-dark">Update</button>
+                                        </form>
+                                        </div>
+                                        
+
+                                </div>
+                                 
+                        </div>
+                <!-- </div> -->
+
+                <div class="bg-light">
+                        
+                        </div>
+                </div>
+        <!-- </div> -->
+</div>
+
+{% endblock content %}
