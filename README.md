@@ -4,10 +4,10 @@ FinHome is a website made with python Django for students that study far from ho
            
 FinHome is also website for landlords to host places for students and food service providers to host thier services.It is very easy and straight forward to use. You can fill forms and the rooms or services are posted.You can edit and delete the posts.
 
-You can choose to register as 
-Student
-Renter
-Food seller
+You can choose to register as <br>
+Student<br>
+Renter<br>
+Food seller<br>
           and thus defining your role, a profile under the role is created.Which can be edited and deleted.
 
 It also have a chatbot to help through and tells the weather of the city.
