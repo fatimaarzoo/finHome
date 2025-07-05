@@ -1,4 +1,4 @@
-#FinHome
+# FinHome
 
 FinHome is a website made with python Django for students that study far from home. Through this website u can find the perfect stay for your term. It lets have you an easy access to the the rented rooms, hostel or even PGs . So that you can find your stay comfortable and accessible according to your needs in a new city or an unfimilar place .
            
