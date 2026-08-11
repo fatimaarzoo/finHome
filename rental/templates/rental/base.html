@@ -1,0 +1,223 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+ 
+    <link rel="stylesheet" href="{% static '/rental/my.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+</head>
+<body >
+   
+    <nav class="navbar sticky-top navbar-expand-lg navbar bg-light justify-content-cente shadow">
+        <div class="container-fluid justify-content-center">
+          <a class="navbar-brand text-dark" href="#"><i class="fa-solid fa-house"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center " id="navbarSupportedContent">
+            <ul class="navbar-nav  mb-lg-0 r">
+              <li class="nav-item ">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about/">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contact/">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/house/">House</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/food/">Food</a>
+              </li>
+              </li>
+              <!-- <li class="nav-item">
+                 <a class="nav-link" href="/dashboard/">Dashboard</a>
+              </li> -->
+              <li class="nav-item"><a class="nav-link" href="/choose_register/">Register</a></li>
+              <!-- <li class="nav-item dropdown"> -->
+                <!-- <a class="nav-link dropdown-toggle" href="/choose_register/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Register
+                </a> -->
+                <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown"> -->
+                  
+                  <!-- <li><a class="dropdown-item" href="/register/student/">Register User</a></li>
+                  
+                  
+                   <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="/login/">Login</a></li>
+                  <li><a class="dropdown-item" href="#">renter logout</a></li> -->
+                <!-- </ul>  -->
+              <!-- </li> -->
+              
+            </ul>
+            </div>
+            <div class="justify-content-end">
+            {% if request.user.is_authenticated %}
+            <a href="/dashboard/" class="prfpic  mx-2" style="height:20px;width:20px;text-decoration: none;color:black;font-size: 25px;"><i class="fa-solid fa-circle-user "></i>
+              <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item"><i class="fa-solid fa-circle-user bg-dark"></i></a></li>
+                  <li><a class="dropdown-item" href="/dashboard/">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="/profile/">Profile</a></li>
+                  </ul> -->
+            </a>
+            <a href="/logout/" class="btn btn-outline-success" type="submit">Logout</a>
+            {%else%}
+            <!-- <a href="/dashboard/"class="prfpic  mx-2" style="height: 10px;width: 10px;"><i class="fa-regular fa-user "></i></a> -->
+            <a href="/login/" class="btn btn-outline-success" type="submit">Login</a>
+            {%endif%}
+          </div>
+           
+          
+        </div>
+      </nav>
+  
+      {%block content%}
+    {%endblock%}
+  <footer class="text-center text-lg-start text-white bg-dark">
+    <!-- Grid container  style="background-color: #45526e" -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6>
+            <p>
+              <a class="text-white" href="/house/">Find Home</a>
+            </p>
+            <p>
+              <a class="text-white" href="/food/">Find Food</a>
+            </p>
+            <p>
+              <a class="text-white" href="/about/">About us</a>
+            </p>
+            <p>
+              <a class="text-white" href="/contact/">Contact us</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">
+              Useful links
+            </h6>
+            <p>
+              <a class="text-white" href="/profile/">Your Account</a>
+            </p>
+            <p>
+              <a class="text-white" href="/dashboard/">Dashboard</a>
+            </p>
+            <p>
+              <a class="text-white" href="/register/student/">Register as student</a>
+            </p>
+            <p>
+              <a class="text-white" href="/register/student/">Register as host</a>
+            </p>
+            <p>
+              <a class="text-white" href="/register/seller/">Register as food service</a>
+            </p>
+          </div>
+
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6>
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0">
+        <div class="row d-flex align-items-center">
+
+          <!-- Grid column -->
+          <div class="col ml-lg-0 text-center ">
+            <!-- Facebook -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-facebook-f"></i
+              ></a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-twitter"></i
+              ></a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-google"></i
+              ></a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button"
+               ><i class="fab fa-instagram"></i
+              ></a>
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+  </footer>
+  <!-- Footer -->
+</div>
+<!-- End of .container -->
+ 
+</body>
+
+</html>

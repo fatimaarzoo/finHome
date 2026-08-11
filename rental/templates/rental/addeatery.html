@@ -1,0 +1,24 @@
+{% extends 'rental/base.html'%}
+{%block content%}
+{% load crispy_forms_tags %}
+<div class="container-fluid bg-light">
+    <div class="row ">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 py-5 px-5 shadow " >
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token%}
+                <legend class="text-center">FORM</legend>
+                <hr>
+                {{ form | crispy}}
+                <button type="submit" class="btn btn-success" >SUBMIT</button>
+                <button type="submit" class="btn btn-info" href="#">UPDATE</button>
+                <button type="submit" class="btn btn-danger" href="#">DELETE</button>
+
+            </form>
+            </div>
+        <div class="col-sm-3"></div>
+
+    </div>
+</div>
+
+{%endblock%}

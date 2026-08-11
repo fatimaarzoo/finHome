@@ -1,0 +1,57 @@
+{% extends 'rental/base.html'%}
+{% load static %}
+{%block content%}
+{%load crispy_forms_tags %} 
+<div class="container-fluid ">
+  <!-- for search -->
+  <div class="row  content">
+    
+    <div class="col-md-8 mx-auto py-5 text-center">
+      <h1 style="color: #ffffff;"> SEARCH FOOD<br> __________</h1>
+
+                <p style="color: lightgrey;margin-top: 20px;"> Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+                    1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    It has survived not only five centuries, but also the leap into electronic typesetting,
+                    remaining essentially unchanged.</p>
+      
+    
+      <form class="form content-center">
+        <input name="search" class="form srch my-5" type="search" placeholder="Search" aria-label="Search"><button class=" btn2"
+          type="submit">Search</button>
+      </form>
+      
+      <form method="get">
+        <button class="btn btn-danger btn1 " name="category" value="lunch" type="submit">LUNCH</button> <button class=" btn btn-danger btn1 " name="category" value="canteen" type="submit">CANTEEN/RESTRAURNT</button>
+       <button class="btn btn-danger btn1" name="category" value="ALL" type="submit">ALL</button>
+       </form>
+      <hr style="color: #ffffff;">
+    </div>
+  </div>
+  <!-- for cards -->
+  <div class="row">
+    {% for food in foods %}
+    <div class="col-sm-2 mx-5 my-5">
+      <a href="/fdetail/{{food.id}}/" class="card-link">
+        <!-- card -->
+        <div class="card" style="width: 18rem;">
+          <img src="{{ food.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ food.name}}</h5>
+            <p class="card-text"> {{ food.location}}</p>
+            <p class="card-text text-muted small">{{ food.category}}<br>
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{food.created_date|date:"F d, Y"}}</small>
+          </div>
+        </div>
+        <!-- card end -->
+      </a>
+    </div>
+
+    {%endfor%}
+  </div>
+</div>
+{%endblock%}
+

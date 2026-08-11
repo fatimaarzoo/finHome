@@ -1,0 +1,67 @@
+{% extends 'rental/base.html'%}
+{%block content%}
+{%load crispy_forms_tags %}
+<div class="container-fluid ">
+  <!-- for search -->
+  <div class="row  content">
+
+    <div class="col-md-8 mx-auto py-5 text-center">
+      <h1 style="color: #ffffff;"> SEARCH HOME<br> __________</h1>
+
+      <p style="color: lightgrey;margin-top: 20px;"> Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the
+        1500s,when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.</p>
+
+      <form class="form content-center">
+        <input name="search" class="form srch my-5" type="search" placeholder="Search" aria-label="Search"><button
+          class=" btn2" type="submit">Search</button>
+      </form>
+      <form method="get">
+        <div class="col">
+          <!-- <select name="item_id">
+            {% for i in item %}
+            <option name="loc">{{ i }}</option>
+            {% endfor %}
+          </select>
+          <select name="item_id">
+            {% for entry in item2 %}
+            <option value="typ">{{ entry }}</option>
+            {% endfor %}
+          </select> -->
+          <input type="number" name="min_price" placeholder="Min Price">
+          <input type="number" name="max_price" placeholder="Max Price">
+          <button type="submit">Filter</button>
+        </div>
+      </form>
+      <hr style="color: #ffffff;">
+    </div>
+  </div>
+  <!-- for cards -->
+  <div class="row">
+    {% for room in rooms %}
+    <div class="col-sm-2 mx-5 my-5">
+      <a href="/detail/{{room.id}}" class="card-link">
+        <!-- card -->
+        <div class="card" style="width: 18rem;">
+          <img src="{{room.image.url}}" class="card-img-top" alt="{{room.name}}">
+          <div class="card-body">
+            <h5 class="card-title">{{room.name}}</h5>
+            <p class="card-text"> {{ room.location}}</p>
+            <p class="card-text text-muted small">{{ room.type}}<br>
+              Rs. {{ room.price}} per month
+            </p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">{{ room.created_date|date:"F d, Y"}}</small>
+          </div>
+        </div>
+        <!-- card end -->
+      </a>
+    </div>
+
+    {%endfor%}
+  </div>
+</div>
+{%endblock%}
