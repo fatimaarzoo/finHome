@@ -1,7 +1,0 @@
-Django==5.2.3
-gunicorn
-python-dotenv
-requests
-beautifulsoup4
-pandas
-plotly
