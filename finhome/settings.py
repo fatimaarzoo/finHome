@@ -79,12 +79,34 @@ WSGI_APPLICATION = 'finhome.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+import urllib
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+DATABASE_STRING = os.getenv("DATABASE_URL")
+     
+if os.environ.get("DATABASE_URL"):
+    url = urllib.parse.urlparse(DATABASE_STRING)
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": url.path.lstrip("/"),
+            "USER": url.username,
+            "PASSWORD": url.password,
+            "HOST": url.hostname,
+            "PORT": url.port,
+        }
     }
-}
+else:
+    # Fall back to SQLite for local development
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
